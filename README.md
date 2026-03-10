@@ -13,10 +13,10 @@ tags:
 <p align="center">
   <a href="https://arxiv.org/abs/2602.23068"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b.svg" alt="Paper"></a>
   <a href="https://huggingface.co/spaces/HumeAI/tada"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Demo-blue" alt="Demo"></a>
+  <a href="https://www.hume.ai/blog/opensource-tada"><img src="https://img.shields.io/badge/Blog-Post-orange.svg" alt="Blog"></a>
   <a href="https://huggingface.co/collections/HumeAI/tada"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Collection-yellow" alt="Collection"></a>
   <a href="https://pypi.org/project/hume-tada/"><img src="https://img.shields.io/badge/PyPI-hume--tada-3775A9.svg?logo=pypi&logoColor=white" alt="PyPI"></a>
   <a href="https://github.com/HumeAI/tada/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
-  <a href="https://www.hume.ai/blog/opensource-tada"><img src="https://img.shields.io/badge/Blog-Post-orange.svg" alt="Blog"></a>
 </p>
 
 <img width="2400" height="1260" alt="image" src="https://github.com/user-attachments/assets/800eb8c5-eb6f-4e03-b8f3-150055a6cdfc" />
@@ -133,7 +133,7 @@ audio = audio.to(device)
 
 # For non-English prompts, provide the transcript so the encoder uses forced alignment
 # instead of the built-in ASR (which is English-only)
-prompt_text = "じゃあ日本語もメロディーみたいな感じで覚えるで何言ってるか分かんないときはなんかタカタカとかサカサカとかカタカタって言ってればいいんですよ日本語って大体そういう音だから"
+prompt_text = "このムキムキのお兄さんがいるし バーだし少し高そうだと思いますよねこのバーの料金設定は良心的でした まあそんなに高くなかったです"
 prompt = encoder(audio, text=[prompt_text], sample_rate=sample_rate)
 
 output = model.generate(
@@ -144,7 +144,7 @@ output = model.generate(
 
 Supported languages: `ar`, `ch`, `de`, `es`, `fr`, `it`, `ja`, `pl`, `pt`. When `language` is not specified, the default English aligner is used.
 
-> **Note:** For non-English prompts, you should provide the transcript of the reference audio via the `text` parameter. The encoder's built-in ASR is English-only — without a transcript, it will produce incorrect token alignments for non-English audio. The generation will still work, but alignment quality will be degraded.
+> **Note:** For non-English prompts, you should provide the transcript of the reference audio via the `text` parameter. The encoder's built-in ASR is English-only. The generation will still work, but alignment quality will be degraded.
 
 ### Speech continuation
 
