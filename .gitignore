@@ -8,7 +8,7 @@ __pycache__/
 dist/
 build/
 PYPI_README.md
-_reference_material/
+
 bin/
 obj/
 *.wav
